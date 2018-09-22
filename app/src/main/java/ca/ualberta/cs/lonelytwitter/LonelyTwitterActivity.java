@@ -39,10 +39,10 @@ public class LonelyTwitterActivity extends Activity {
 			public void onClick(View v) {
 				String text = bodyText.getText().toString();
 
-                ImportantTweet importantTweet = new ImportantTweet();
+                GoodMood great = new GoodMood();
                 try {
-                    importantTweet.setMessage(text);
-                }catch(TooLongTweetException e){
+                    great.setMessage(text);
+                }catch(TooLongException e){
 
                 }
 				saveInFile(text, new Date(System.currentTimeMillis()));

@@ -2,29 +2,27 @@ package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
-/**
- * Created by mahinay on 9/20/18.
- */
-
-public abstract class Tweet {
+public abstract class Mood {
     protected String message;
     private Date date;
 
-
-    public void setMessage(String message) throws TooLongTweetException{
+    public void setMessage(String message) throws TooLongException{
         if (this.message.length()>140){
-            throw new TooLongTweetException();
+            throw new TooLongException();
         }
         this.message=message;
     }
-    public void setDate(Date date){
-        this.date=date;
-    }
+
+    public void setDate(Date date){this.date=date;}
+
     public String getMessage(){
         return this.message;
     }
+
     public Date getDate(){
         return this.date;
     }
-    public abstract Boolean isImportant();
+    public abstract Boolean isGood();
+
+
 }
